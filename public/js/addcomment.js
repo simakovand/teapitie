@@ -19,7 +19,7 @@ formcom?.addEventListener('submit', async (e) => {
   const myform = Object.fromEntries(new FormData(formcom));
   const formid = document.querySelector('#teaid');
   const { id } = formid.dataset;
-  const response = await fetch('teapitie.herokuapp/tea/:id', {
+  const response = await fetch('https://teapitie.herokuapp.com/tea/:id', {
     method: 'post',
     headers: {
       'Content-type': 'application/json',

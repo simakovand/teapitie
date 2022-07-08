@@ -55,7 +55,7 @@ async function init() {
       const coordinates = target.geometry._coordinates;
       console.log(target.geometry._coordinates);
 
-      window.location.replace(`teapitie.herokuapp/teapitie/${coordinates[0]}/${coordinates[1]}`);
+      window.location.replace(`https://teapitie.herokuapp.com/teapitie/${coordinates[0]}/${coordinates[1]}`);
     }
   });
 }
