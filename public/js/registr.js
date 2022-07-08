@@ -6,7 +6,7 @@ form?.addEventListener('submit', async (e) => {
   const inputs = Object.values(allForms);
   if (!inputs.includes('')) {
     console.log(allForms);
-    const response = await fetch('http://localhost:3000/registr', {
+    const response = await fetch('teapitie.herokuapp/registr', {
       method: 'post',
       headers: {
         'Content-type': 'application/json',
@@ -22,7 +22,7 @@ form?.addEventListener('submit', async (e) => {
       alert('что-то пошло не так :(');
     }
   } else {
-    return alert('пустой ввод')
+    return alert('пустой ввод');
   }
 });
 
@@ -31,7 +31,7 @@ const formAuth = document.forms.auth;
 formAuth?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const allForms = Object.fromEntries(new FormData(formAuth));
-  const response = await fetch('http://localhost:3000/auth', {
+  const response = await fetch('teapitie.herokuapp/auth', {
     method: 'post',
     headers: {
       'Content-type': 'application/json',
@@ -41,7 +41,7 @@ formAuth?.addEventListener('submit', async (e) => {
   if (response.ok) {
     const data = await response.json();
     if (data === '400') alert('неправильные данные');
-    else window.location = ('http://localhost:3000/');
+    else window.location = ('teapitie.herokuapp/');
   } else {
     alert('что-то пошло не так :(');
   }
@@ -52,7 +52,7 @@ const Logout = document.getElementById('logout');
 Logout?.addEventListener('click', async (e) => {
   e.preventDefault();
   const allForms = Object.fromEntries(new FormData(formAuth));
-  const response = await fetch('http://localhost:3000/logout', {
+  const response = await fetch('teapitie.herokuapp/logout', {
     method: 'post',
     headers: {
       'Content-type': 'application/json',

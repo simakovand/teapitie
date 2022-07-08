@@ -57,7 +57,7 @@ async function init() {
       const coordinates = target.geometry._coordinates;
       console.log(target.geometry._coordinates);
 
-      window.location.replace(`http://localhost:3000/teapitie/${coordinates[0]}/${coordinates[1]}`);
+      window.location.replace(`teapitie.herokuapp/teapitie/${coordinates[0]}/${coordinates[1]}`);
     }
   });
 }
@@ -87,7 +87,7 @@ formTea?.addEventListener('submit', async (e) => {
     if (coords === null) {
       alert('локация не найдена');
     } else {
-      const response = await fetch('http://localhost:3000/lk', {
+      const response = await fetch('teapitie.herokuapp/lk', {
         method: 'post',
         headers: {
           'Content-type': 'application/json',
